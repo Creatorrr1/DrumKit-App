@@ -1,9 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import Drums from "./pages/drums.js"
+
 
 function App() {
   return (
     <div className="App">
+      <Drums/>
     </div>
   );
 }
