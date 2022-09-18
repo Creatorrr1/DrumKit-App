@@ -2,6 +2,7 @@ import React from "react"
 import "./css/keyboard.css"
 
 function Drums() {
+
     function removeTransition(e) {
         if (e.propertyName !== 'transform') return;
         e.target.classList.remove('playing');
@@ -11,6 +12,9 @@ function Drums() {
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
         const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
         if (!audio) return;
+
+		console.log("key:", key)
+		console.log("audio:", audio)
     
         key.classList.add('playing');
         audio.currentTime = 0;
