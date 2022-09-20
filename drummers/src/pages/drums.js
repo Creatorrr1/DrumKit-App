@@ -20,6 +20,7 @@ function Drums() {
 		75: "../sounds/tom.wav",
 		76: "../sounds/tink.wav",
 	})
+	// This is the all the audio elements being created based on the data keys saved in the keys useRef
 	// yourAudioKeysArray
 	keys.map((audioKey) => (
 		<audio
@@ -30,9 +31,12 @@ function Drums() {
 		/>
 	))
 
+	// On the KeyDown event, the dataKey is targeted so we can access the audio src based on audioKey assigned to it
 	const onKeyDown = (e) => {
-		const audioKey = e.dataKey
+		const { datakey } = e.target;
+		const audioKey = datakey
 		const audioEl = audioElementsByKeyRef.current[audioKey]
+		// const audioEl = <audio ref={(el) => { audioElementsByKeyRef.current[audioKey] = el }}/>
 		audioEl.play()
 	}
 
@@ -40,39 +44,39 @@ function Drums() {
 		<>
 			<div className="wrapper">
 				<main className="keys">
-					<div dataKey="65" className="key" onKeyDown={onKeyDown}>
+					<div datakey="65" className="key" onKeyDown={onKeyDown}>
 						<kbd>A</kbd>
 						<span className="sound">clap</span>
 					</div>
-					<div dataKey="83" className="key" onKeyDown={onKeyDown}>
+					<div datakey="83" className="key" onKeyDown={onKeyDown}>
 						<kbd>S</kbd>
 						<span className="sound">hiat</span>
 					</div>
-					<div dataKey="68" className="key" onKeyDown={onKeyDown}>
+					<div datakey="68" className="key" onKeyDown={onKeyDown}>
 						<kbd>D</kbd>
 						<span className="sound">kick</span>
 					</div>
-					<div dataKey="70" className="key" onKeyDown={onKeyDown}>
+					<div datakey="70" className="key" onKeyDown={onKeyDown}>
 						<kbd>F</kbd>
 						<span className="sound">openhat</span>
 					</div>
-					<div dataKey="71" className="key" onKeyDown={onKeyDown}>
+					<div datakey="71" className="key" onKeyDown={onKeyDown}>
 						<kbd>G</kbd>
 						<span className="sound">boom</span>
 					</div>
-					<div dataKey="72" className="key" onKeyDown={onKeyDown}>
+					<div datakey="72" className="key" onKeyDown={onKeyDown}>
 						<kbd>H</kbd>
 						<span className="sound">ride</span>
 					</div>
-					<div dataKey="74" className="key" onKeyDown={onKeyDown}>
+					<div datakey="74" className="key" onKeyDown={onKeyDown}>
 						<kbd>J</kbd>
 						<span className="sound">snare</span>
 					</div>
-					<div dataKey="75" className="key" onKeyDown={onKeyDown}>
+					<div datakey="75" className="key" onKeyDown={onKeyDown}>
 						<kbd>K</kbd>
 						<span className="sound">tom</span>
 					</div>
-					<div dataKey="76" className="key" onKeyDown={onKeyDown}>
+					<div datakey="76" className="key" onKeyDown={onKeyDown}>
 						<kbd>L</kbd>
 						<span className="sound">tink</span>
 					</div>

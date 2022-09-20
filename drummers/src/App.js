@@ -1,5 +1,5 @@
 import './App.css';
-import Drums from "./pages/drums.js"
+import Drums from "./pages/newDrums.js"
 
 
 function App() {
